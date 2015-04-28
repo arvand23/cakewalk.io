@@ -1,0 +1,9 @@
+<% if signed_in? && current_user.admin? %>
+	You're an admin.
+<% end %>
+<% if signed_in? %>
+	You're signed in. Here's your stuff.
+<% else %>
+	<h1>Fastest way to gather early user feedback on new features and products</h1>
+	<h2>Pre-launch and private beta user testing with your own customers and team.</h2>
+<% end %>
