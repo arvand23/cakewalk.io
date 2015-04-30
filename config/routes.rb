@@ -1,4 +1,14 @@
 Cakewalkio::Application.routes.draw do
+  resources :tests do
+    collection do
+      get :upgrade
+      post :charge
+    end
+    member do
+      get :start
+    end
+  end
+
   devise_for :users
   get "static/home"
   root 'static#home'

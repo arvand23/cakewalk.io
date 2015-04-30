@@ -1,0 +1,47 @@
+<%= current_user.email %>, you have <%= pluralize(current_user.balance, 'user test') %> remaining.
+
+			<script src="https://checkout.stripe.com/checkout.js"></script>
+			<div class="span7 text-center">
+				<button class="btn planbutton" data-plan="1" >$25 for 1 User Test <span class="glyphicon glyphicon-lock"></span></button>
+				<button class="btn planbutton" data-plan="5">$100 for 5 User Tests <span class="glyphicon glyphicon-lock"></span></button>
+			</div>
+				<script>
+				  var handler = StripeCheckout.configure({
+				    key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+				
+				    currency: 'usd',
+				    email: '<%= current_user.email %>',
+				    token: function(token) {
+				      // Use the token to create the charge with a server-side script.
+				      // You can access the token ID with `token.id`
+				      $("#stripeToken").val(token.id);
+				      $("#stripeToken").parents("form").submit();
+				    }
+				  });
+
+				  $('.planbutton').on('click', function(e) {
+				    var plan = $(this).data("plan");
+				
+				    $("#plan").val(plan);
+				    handler.open({
+				      name: 'Purchase '+ plan + ' User Test',
+				      description: 'Credit for '+ plan + ' user test.'
+				      
+				    });
+				    e.preventDefault();
+				  });
+
+				  // Close Checkout on page navigation
+				  $(window).on('popstate', function() {
+				    handler.close();
+				  });
+				</script>
+				<%= form_tag(charge_tests_path, method: 'POST') do %>
+				<%= hidden_field_tag 'stripeToken', '' %>
+				<%= hidden_field_tag 'plan', '' %>
+				<% end %>
+</br>
+</br>
+
+
+Unlimited for $200/month (subscription, coming soon)
