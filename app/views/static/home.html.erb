@@ -20,7 +20,35 @@
 		<h7><%= "http://localhost:3000/tests/#{f.cwurl}/start" %></h7> <!-- add a copy button -->
 		<h6><%= f.url %></br></h6></br></br>
 	<% end %>
-<% else %>
-	<h1>Fastest way to gather early user feedback on new features and products</h1>
-	<h2>Pre-launch and private beta user testing with your own customers and team.</h2>
+<% end %>
+<% unless signed_in? %>
+<div class="notloggedinphoto">
+	<div class="container">		
+		<h1 class="h1home">Make your web app easy to use before you launch</h1>
+			<h2 class="h2home">Pre-launch user testing with a handful of your existing users and team</h2>
+			<p><div class="span7 text-center"><%= link_to "Run a Free User Test", new_user_registration_path, class: "btn btn-hollow" %></div></p>		
+	</div>	
+</div>
+<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h1 class="paragraphbody">
+						Capture users’ screens and feedback the first time they use your product
+					</h1>
+				</div><!--end col-md-4 -->
+
+				<div class="col-md-4">
+					<h1 class="paragraphbody">
+						Discover user onboarding sticking points before your big launch
+					</h1>
+				</div><!--end col-md-4 -->
+
+
+				<div class="col-md-4">
+					<h1 class="paragraphbody">
+						Catch usability bugs for new features before rolling it out to all your users
+					</h1>
+				</div><!--end col-md-4 -->
+			</div><!--end div row-->
+</div>
 <% end %>

@@ -1,1 +1,86 @@
 @import 'bootstrap';
+.line {
+	border-top: 4px solid #d8505c;
+}
+.cakewalk {
+	font-family: 'Open Sans', sans-serif;
+	font-style: bold;
+	color: #414247;
+	font-weight: bold;
+	font-size: 35px;
+	letter-spacing: 1px;
+}
+.pink {
+	font-family: 'Open Sans', sans-serif;
+	font-style: bold;
+	color: #d8505c;
+	font-weight: bold;
+	font-size: 35px;
+	letter-spacing: 1px;
+	margin-bottom: -15px;
+}
+.logo {
+	margin-top: -15px;
+}
+.notloggedinphoto {
+	margin-top: -75px;
+	background-image: asset-data-url("bling.png"); /* this syntax makes it work on heroku*/
+	background-position:center top;
+	background-repeat: no-repeat;
+	background-size: cover; /*this makes it stretch it and be 100% width and height at all times */
+}
+.h1home {
+	color: #fff;
+	text-align: center;
+	font-weight: 100;
+  	font-size: 40px;
+  	padding-top: 250px;
+  	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	letter-spacing: 1px;
+}
+.h2home{
+	color: #d8505c;
+	text-align: center;
+	font-weight: 200;
+  	font-size: 22px;
+  	margin-top: -5px;
+  	padding-bottom: 130px;
+  	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	letter-spacing: 1px;
+}
+.btn-hollow {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #78be47;
+    color: #78be47;
+    font-weight: 200;
+    letter-spacing: 1px;
+    width: 225px;
+    line-height: 50px;
+    margin-bottom: 100px;
+}
+.btn-hollow:hover, .btn-hollow.active {
+	color: #436806;
+	border-color: #436806;
+}
+.paragraphbody {
+	color: #666666;
+	text-align: left;
+	font-weight: 100;
+  	font-size: 22px;
+  	padding-top: 100px;
+  	padding-bottom: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	letter-spacing: 1px;
+}
+.customfooter {
+	text-align: right;
+	font-size: 12px;
+	color: #666666;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

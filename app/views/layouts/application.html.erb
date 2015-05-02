@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <nav class="navbar navbar-default line" role="navigation">
@@ -16,7 +17,8 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <div class="navbar-brand"><%= image_tag("cakewalk.png", class: "logo") %><%= link_to "cakewalk.io", static_home_path, class: 'koalacam down' %></div>
+  <div class="navbar-brand"><%= image_tag("walkingcake.png", class: "logo") %>  
+    <span class="cakewalk">cakewalk</span><span class="pink">.io</span></div>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,5 +42,8 @@
 
 <%= yield %>
 
+
+<!-- footer -->
+      <p class= "customfooter line">Made with a flame thrower &#38; <span class="glyphicon glyphicon-heart"></span> at &#169; Syrup Labs Inc, all rights reserved.</p>
 </body>
 </html>
