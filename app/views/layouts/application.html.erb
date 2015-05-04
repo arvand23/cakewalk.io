@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cakewalkio</title>
+  <title>Cakewalk.io - Web app user testing screen capture for pre-launch, soft-launch, private betas and new features</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -18,8 +18,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-  <div class="navbar-brand"><%= image_tag("walkingcake.png", class: "logo") %>  
-    <span class="cakewalk">cakewalk</span><span class="pink">.io</span></div>
+  <div class="navbar-brand"><span class="cakewalk"><%= image_tag("walkingcake.png", class: "logo") %>cakewalk</span><span class="pink">.io</span></div>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,6 +44,8 @@
 
 
 <!-- footer -->
-      <p class= "customfooter line">Made with a flame thrower &#38; <span class="glyphicon glyphicon-heart"></span> at &#169; Syrup Labs Inc, all rights reserved.</p>
+
+      <p class= "customfooter line">Made with <span class="glyphicon glyphicon-heart-empty"></span>, while listening to <span class="glyphicon glyphicon-music"></span> Childish Gambino  at &#169; Syrup Labs Inc, all rights reserved.</p>
+
 </body>
 </html>

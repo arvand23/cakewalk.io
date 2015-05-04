@@ -1,3 +1,4 @@
+@import 'bootstrap-sprockets'; /* required for glyphs, needed to add '~> 3.3.4' to gemfile */
 @import 'bootstrap';
 .line {
 	border-top: 4px solid #d8505c;
@@ -83,4 +84,48 @@
 	color: #666666;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+.btn-danger {
+	background-color: #d8505c;
+	font-weight: 200;
+	letter-spacing: 1px;
+	height: 45px;
+}
+.account-balance {
+	color: #666666;
+	text-align: center;
+	font-weight: 200;
+  	font-size: 15px;
+  	padding-top: 0px;
+  	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.btn-hollow-small {
+    background: #fff;
+    border: 2px solid #78be47;
+    color: #78be47;
+    font-weight: bold;
+    width: 100px;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+.btn-hollow-small:hover, .btn-hollow-small.active {
+	color: #436806;
+	border-color: #436806;
+}
+.text-left {
+	text-align: left;
+}
+.circle{
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    width:8px;
+    height:8px;
+}
+.pinkdot {
+	padding-top: -100px;
+	color: #d8505c;
 }

@@ -2,24 +2,48 @@
 	You're an admin.</br>
 <% end %>
 <% if signed_in? %>
-	<%= current_user.email %>, you have <%= pluralize(current_user.balance, 'user test') %> remaining.   <%= link_to "Upgrade Account", upgrade_tests_path %></br></br>
+<div class="container">	</br></br></br></br>
 	<!-- field user enters their URL, its shortened saved to User.cwurl -->
 	<%= form_for(@url) do |f| %>
-		<%= f.text_field :url %>
-		<%= f.submit "Go!" %>
-			<% if @url.errors.any? %>
-			   <ul class="alert alert-danger">
-			   	<% @url.errors.full_messages.each do |msg| %>
-			      <li><%= msg %></li>
-			    <% end %>
-			   </ul>
-			<% end %>
+		<div class="input-group">
+			<%= f.text_field :url, :placeholder => "URL you want to user test", class: "form-control input-lg" %>
+			<span class="input-group-btn">
+				<%= f.submit "pewpewpew", class: "btn btn-danger" %>
+			</span>
+		</div>
+			<div class="account-balance">
+				</br>You have <%= pluralize(current_user.balance, 'user test') %> left.   <%= link_to "Get More", upgrade_tests_path %></br></br>
+			</div>
+				<% if @url.errors.any? %>
+				   <ul class="alert alert-danger">
+				   	<% @url.errors.full_messages.each do |msg| %>
+				      <li><%= msg %></li>
+				    <% end %>
+				   </ul>
+				<% end %>
 	<% end %>
-</br></br>
+</br></br></br></br></br></br>
 	<% @userurls.each do |f| %> <!-- %= would display array as well --> 
-		<h7><%= "http://localhost:3000/tests/#{f.cwurl}/start" %></h7> <!-- add a copy button -->
-		<h6><%= f.url %></br></h6></br></br>
+		<div class="span7 text-center">
+			<div class="glyphicon glyphicon-flash pinkdot"></div>
+			<div class="row">
+				<div class="col-md-8 text-left">
+					<h7><%= f.url %></h7> <!-- add a copy button -->
+					<h6><%= "http://localhost:3000/tests/#{f.cwurl}/start" %></h6></br></br>
+				</div>
+				<div class="col-md-4">	
+					<%= link_to new_user_registration_path, class: "btn btn-hollow-small" do %>
+						<i class= "glyphicon glyphicon-film"> tests</i>
+					<% end %>
+					<%= link_to new_user_registration_path, class: "btn btn-hollow-small" do %>
+						<i class= "glyphicon glyphicon-copy"> copy</i>
+					<% end %>
+				</div>
+			</div>
+
+		</div>
 	<% end %>
+</div><!-- end container -->
 <% end %>
 <% unless signed_in? %>
 <div class="notloggedinphoto">
