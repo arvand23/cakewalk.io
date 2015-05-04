@@ -137,3 +137,16 @@
 	padding-top: -100px;
 	color: #d8505c;
 }
+.planbutton {
+		background: #fff;
+    border: 2px solid #78be47;
+    color: #78be47;
+    font-weight: 200;
+    width: 200px;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+.planbutton:hover, .planbutton:active {
+	color: #436806;
+	border-color: #436806;
+}

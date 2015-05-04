@@ -1,4 +1,6 @@
+<div class="account-balance">
 <%= current_user.email %>, you have <%= pluralize(current_user.balance, 'user test') %> remaining.
+</div>
 
 			<script src="https://checkout.stripe.com/checkout.js"></script>
 			<div class="span7 text-center">
