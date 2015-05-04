@@ -8,7 +8,7 @@
 	font-style: bold;
 	color: #414247;
 	font-weight: bold;
-	font-size: 35px;
+	font-size: 32px;
 	letter-spacing: 1px;
 }
 .pink {
@@ -16,12 +16,14 @@
 	font-style: bold;
 	color: #d8505c;
 	font-weight: bold;
-	font-size: 35px;
+	font-size: 32px;
 	letter-spacing: 1px;
 	margin-bottom: -15px;
 }
 .logo {
-	margin-top: -15px;
+	margin-top: -5px;
+	width: 25px;
+	margin-right: 2px;
 }
 .notloggedinphoto {
 	margin-top: -75px;
@@ -90,6 +92,12 @@
 	font-weight: 200;
 	letter-spacing: 1px;
 	height: 45px;
+}
+.btn-warning {
+	color: white;
+	background-color: #d8505c;
+	font-weight: 200;
+	letter-spacing: 1px;
 }
 .account-balance {
 	color: #666666;
