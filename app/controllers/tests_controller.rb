@@ -12,7 +12,7 @@ class TestsController < ApplicationController
 	end
 
 	def start #/tests/3240234/start
-		@site = Test.find_by_cwurl(params[:id])
+		@test = Test.find_by_cwurl(params[:id])
 	end
 
 	def upgrade
