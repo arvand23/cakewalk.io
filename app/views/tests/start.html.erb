@@ -4,24 +4,39 @@
 			<h4>Help <%= @test.url %> work out kinks and become easier to use by clicking below.</h4>
 			</br></br>
 		</div>
-			<h4 class="smaller">Share your thoughts out loud as you use <%= @test.url %> to:
+			<h4 class="smaller">Click below (it'll record your screen), then navigate to <%= @test.url %> to:
 			<ul>
-				<li>describe in your own words what <%= @test.url %> is</li>
 				<li>create a new account</li>
-				<li>use what you consider its main feature</li>
+				<li>use what you consider to be its main feature</li></br></br>
 			</h4>
 
 
+			<script type="text/javascript" src="http://api.screenleap.com/js/screenleap.js"></script>
+
+			<a href="" id="something" class="btn planbutton">Start</a>
+
+			<script type="text/javascript">
+			  $('#something').click(function(e){
+			      function onNativeDownloadStartCallback(){
+			          console.log('Explaing how to download');
+			      }
 
 
+			          var screenShareData = <%= @screenShareData.to_json.html_safe %>;
+			          screenleap.startSharing('EXTENSION', screenShareData , {
+			              nativeDownloadStarting: onNativeDownloadStartCallback
+			          });
 
-			Share Your Screen &#38; Mic to Start
-	
+			      e.preventDefault();
+			  });
+			</script>
 
-
+		
+			  <% @screenShareData %>
 
 
 	<% else %>
 	Please contact <%= @test.user.email %>. They don't have enough credit to conduct this user test.
 	<% end %>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 </div>

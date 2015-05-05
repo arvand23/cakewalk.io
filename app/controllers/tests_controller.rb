@@ -13,6 +13,27 @@ class TestsController < ApplicationController
 
 	def start #/tests/3240234/start
 		@test = Test.find_by_cwurl(params[:id])
+
+		    require 'json'
+		    require 'net/http'
+		    require 'uri'
+
+		    uri = URI.parse('https://api.screenleap.com/v2/screen-shares')
+
+		    req = Net::HTTP::Post.new(uri.path, initheader = {'accountid' => 'arvando', 'authtoken' => 'DAwrqQpPWR'})
+		    req.set_form_data(
+		        {enableViewerCam: true,
+		         useCustomProtocol: true,
+		         presenterCountryCode: "US",
+		         minImageQuality: 80, maxImageQuality: 90,
+		         recordVideo: true,
+		         autoRecord: true})
+
+		    http = Net::HTTP.new(uri.host, uri.port)
+		    http.use_ssl = true
+		    res = http.request(req)
+
+		    @screenShareData = JSON.parse(res.body)
 	end
 
 	def upgrade
