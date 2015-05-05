@@ -29,7 +29,7 @@
 			<div class="row">
 				<div class="col-md-8 text-left">
 					<h7><%= f.url %></h7> <!-- add a copy button -->
-					<h6><%= "http://localhost:3000/tests/#{f.cwurl}/start" %></h6></br></br>
+					<h6><% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %></h6></br></br>
 				</div>
 				<div class="col-md-4">	
 					<%= link_to new_user_registration_path, class: "btn btn-hollow-small" do %>
