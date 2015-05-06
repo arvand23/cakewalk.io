@@ -11,15 +11,16 @@
 			</h4>
 
 
-			<script type="text/javascript" src="https://api.screenleap.com/js/screenleap.js"></script> <!-- change to https for heroku -->
+			<script type="text/javascript" src="https://api.screenleap.com/js/screenleap.js"></script> <!-- change from http to https for heroku -->
 			<div class="span7 text-center">
-				<a href="" id="something" class="btn planbutton">Start</a>
+				<a href="" id="something" class="btn planbutton">Start Recording Screen</a></br>
+				<a href="<%= @test.url %>" id="goto"  target="_blank"></a> <!-- having "#{...}" made url stick to end of localhost -->
 			</div>
 
 			<script type="text/javascript">
 			  $('#something').click(function(e){
 			      function onNativeDownloadStartCallback(){
-			          console.log('Explaing how to download');
+			          console.log('Explaining how to download');
 			      }
 
 
@@ -28,6 +29,22 @@
 			              nativeDownloadStarting: onNativeDownloadStartCallback
 			          });
 
+					screenleap.onScreenShareStart = function() {
+				    	var element = document.getElementById("something");
+				    	var link = document.getElementById("goto");
+						element.innerHTML = "Screen Recording in Progress";
+						link.innerHTML = "<%= @test.url %>";
+				    };
+
+					screenleap.onScreenShareEnd = function() {
+						var element = document.getElementById("something");
+						element.innerHTML = "Screen Recording Ended";
+						//update user balance
+					    var userBalance = <%= @test.user.balance %>
+			      		userBalance--;
+			      		//update complete_date
+					    };
+					
 			      e.preventDefault();
 			  });
 			</script>

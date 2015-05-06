@@ -1,0 +1,49 @@
+?- change user balance after complete - screenleap.onScreenShareEnd()
+
+?-
+page to dl the vids? 
+just forward emails to user?
+only if video >1 minute
+
+BUG: empty field submission gives err. validation on home... something must be present
+
+<%= form_for @current_user, url: chargeforone_tests_path, method: 'POST' do %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="1 User Test"
+          data-amount="2500"
+          data-email="<%= current_user.email %>">
+  </script>
+<% end %>
+
+
+
+
+"You just bought #{pluralize(params[:plan], 'credit'}."
+
+
+
+
+
+
+<a href=“<%= static_home_path %>” class=“cakewalk”>cakewalk<span id=“pink”>.io</span></a></div>
+  </div>
+
+<p class="cakewalk">cakewalk<span class="pink">.io</span></p>
+
+
+
+      <div class="navbar-brand"><%= image_tag("walkingcake.png", class: "logo") %>  <%= link_to "cakewalk.io", static_home_path, class: 'cakewalk' %></div>
+
+
+
+
+
+          <div class="navbar-brand"><%= image_tag("walkingcake.png", class: "logo") %>  
+       <span class="cakewalk">cakewalk</span><span class="pink">.io</span>
+    </div>
+
+
+
+
+
