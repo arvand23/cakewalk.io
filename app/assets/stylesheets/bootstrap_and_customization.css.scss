@@ -122,6 +122,19 @@
 	color: #436806;
 	border-color: #436806;
 }
+.btn-hollow-big {
+    background: #fff;
+    border: 2px solid #78be47;
+    color: #78be47;
+    font-weight: bold;
+    width: 200px;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+.btn-hollow-big:hover, .btn-hollow-big.active {
+	color: #436806;
+	border-color: #436806;
+}
 .text-left {
 	text-align: left;
 }
@@ -152,4 +165,35 @@
 }
 .smaller {
 	font-weight: 200;
+}
+.redplanbutton {
+	background: #fff;
+    border: 2px solid red;
+    color: red;
+    font-weight: 200;
+    width: 200px;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+.redplanbutton:hover, .redplanbutton:active {
+	color: red;
+	border-color: red;
+}
+
+/* alerts */
+.alert-success {
+	color: #fff;
+	background: #436806;  /*B6D72B */
+	border-width: 0px;
+	text-align: center;
+	font-weight: 100;
+	letter-spacing: 1px;
+	margin-top: -20px;
+}
+.alert-warning {
+	border-width: 0px;
+	text-align: center;
+	font-weight: 100;
+	letter-spacing: 1px;
+	margin-top: -20px;
 }

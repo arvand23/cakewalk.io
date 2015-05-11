@@ -1,13 +1,13 @@
 <div class="container">
 	<% if @test.user.balance > 0 %>
-		<div class="span7 text-center">
-			<h4>Help <%= @test.url %> work out kinks and become easier to use by clicking below.</h4>
+		<div class="span7 text-center"></br></br></br></br>
+			<h4>Help <%= @test.url %> work out kinks and become easier to use.</h4>
 			</br></br>
 		</div>
 			<h4 class="smaller">Click below (it'll record your screen), then navigate to <%= @test.url %> to:
 			<ul>
 				<li>create a new account</li>
-				<li>use what you consider to be its main feature</li></br></br>
+				<li>use its main feature</li></br></br>
 			</h4>
 
 
@@ -33,17 +33,22 @@
 				    	var element = document.getElementById("something");
 				    	var link = document.getElementById("goto");
 						element.innerHTML = "Screen Recording in Progress";
+						element.className = "btn redplanbutton";
 						link.innerHTML = "<%= @test.url %>";
 				    };
 
 					screenleap.onScreenShareEnd = function() {
 						var element = document.getElementById("something");
 						element.innerHTML = "Screen Recording Ended";
+						element.className = "btn redplanbutton";
 						//update user balance
-					    var userBalance = <%= @test.user.balance %>
-			      		userBalance--;
+					    $.ajax({
+					    	url: "/tests/decrementbalance",
+					    	type: 'PUT'
+					    	
+						});
 			      		//update complete_date
-					    };
+					};
 					
 			      e.preventDefault();
 			  });
@@ -54,7 +59,7 @@
 
 
 	<% else %>
-	Please contact <%= @test.user.email %>. They don't have enough credit to conduct this user test.
+	Please contact <%= @test.user.email %>. They don't have enough credit to conduct this cakewalk.
 	<% end %>
 </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 </div>

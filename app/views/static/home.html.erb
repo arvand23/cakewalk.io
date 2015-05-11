@@ -12,7 +12,7 @@
 			</span>
 		</div>
 			<div class="account-balance">
-				</br>You have <%= pluralize(current_user.balance, 'user test') %> left.   <%= link_to "Get More", upgrade_tests_path %></br></br>
+				</br>You have <%= pluralize(current_user.balance, 'cakewalk') %> left.   <%= link_to "Get More", upgrade_tests_path %></br></br>
 			</div>
 				<% if @url.errors.any? %>
 				   <ul class="alert alert-danger">
@@ -27,18 +27,30 @@
 		<div class="span7 text-center">
 			<div class="glyphicon glyphicon-flash pinkdot"></div>
 			<div class="row">
-				<div class="col-md-8 text-left">
+				<div class="col-md-9 text-left">
 					<h7><%= f.url %></h7> <!-- add a copy button -->
-					<h6><% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %></h6></br></br>
+					<h6 class="text">Cakewalk link: <% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %></h6></br></br>
 				</div>
-				<div class="col-md-4">	
-					<%= link_to new_user_registration_path, class: "btn btn-hollow-small" do %>
-						<i class= "glyphicon glyphicon-film"> tests</i>
+				<div class="col-md-3">	
+					<%= link_to new_user_registration_path, class: "btn btn-hollow-big" do %>
+						<i class= "glyphicon glyphicon-film">  tests</i>
 					<% end %>
-					<%= link_to new_user_registration_path, id: "copy", class: "btn btn-hollow-small" do %>
+					<!--<%= link_to "#", class: "btn btn-hollow-small copy", id: "copy" do %> <!-- when u put this back, change col-md's to col-md-8, and col-md-4 
 						<i class= "glyphicon glyphicon-copy"> copy</i>
-					<% end %>
+					<% end %>-->
+					<!--<a href="" id="copy" class="btn btn-hollow-small"><i class= "glyphicon glyphicon-copy"> copy</i></a>--></br>
 				</div>
+
+				<!-- 2 bugs: prompt keeps appearing on OK, copy button always prompts the first link in dashboard: attach a listener to each button -->
+				<!--<script type="text/javascript">
+				$('.copy').click(function(){
+					//alert("hi");
+					//var text = document.getElementById("text");
+					text = $('.text').text();
+  					window.prompt("Copy Cakewalk link: cmd+c/ctrl+c, Enter", text);
+ 					return;
+				});
+				</script>-->
 			</div>
 
 		</div>
@@ -49,7 +61,7 @@
 <div class="notloggedinphoto">
 	<div class="container">		
 		<h1 class="h1home">Make your web app easy to use before you launch</h1>
-			<h2 class="h2home">Pre-launch user testing with a handful of your existing users and team</h2>
+			<h2 class="h2home">Bite-sized user tests with your users and team so that you can move fast</h2>
 			<p><div class="span7 text-center"><%= link_to "Run a Free User Test", new_user_registration_path, class: "btn btn-hollow" %></div></p>		
 	</div>	
 </div>
@@ -57,20 +69,20 @@
 			<div class="row">
 				<div class="col-md-4">
 					<h1 class="paragraphbody">
-						Capture users’ screens and feedback the first time they use your product
+						Capture users’ screens the first time they use your product or feature
 					</h1>
 				</div><!--end col-md-4 -->
 
 				<div class="col-md-4">
 					<h1 class="paragraphbody">
-						Discover user onboarding sticking points before your big launch
+						Increase conversions by discovering user onboarding sticking points before you launch
 					</h1>
 				</div><!--end col-md-4 -->
 
 
 				<div class="col-md-4">
 					<h1 class="paragraphbody">
-						Catch usability bugs for new features before rolling it out to all your users
+						Increase retention by catching usability bugs for new features before rolling it out to all your users
 					</h1>
 				</div><!--end col-md-4 -->
 			</div><!--end div row-->

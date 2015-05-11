@@ -1,11 +1,11 @@
 <div class="account-balance">
-<%= current_user.email %>, you have <%= pluralize(current_user.balance, 'user test') %> remaining.
+<%= current_user.email %>, you have <%= pluralize(current_user.balance, 'cakewalk') %> remaining.
 </div>
 
 			<script src="https://checkout.stripe.com/checkout.js"></script>
 			<div class="span7 text-center">
-				<button class="btn planbutton" data-plan="1" >$25 for 1 User Test <span class="glyphicon glyphicon-lock"></span></button>
-				<button class="btn planbutton" data-plan="5">$100 for 5 User Tests <span class="glyphicon glyphicon-lock"></span></button>
+				<button class="btn planbutton" data-plan="1" >$25 for 1 Cakewalk <span class="glyphicon glyphicon-lock"></span></button>
+				<button class="btn planbutton" data-plan="5">$100 for 5 Cakewalks <span class="glyphicon glyphicon-lock"></span></button>
 			</div>
 				<script>
 				  var handler = StripeCheckout.configure({

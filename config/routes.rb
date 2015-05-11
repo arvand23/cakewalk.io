@@ -3,11 +3,14 @@ Cakewalkio::Application.routes.draw do
     collection do
       get :upgrade
       post :charge
+      put :decrementbalance
     end
     member do
       get :start
     end
   end
+
+put 'tests/decrementbalance' => 'tests#decrementbalance'
 
   devise_for :users
   get "static/home"

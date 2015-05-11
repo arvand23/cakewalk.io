@@ -5,9 +5,9 @@ class TestsController < ApplicationController
 		@url.create_cw_url
 
 		if @url.save
-			redirect_to static_home_path, :notice => "Success"
+			redirect_to static_home_path, :notice => "Excellent! Now, share your Cakewalk link with testers."
 		else
-			render static_home_path, :alert => "Fail"
+			render static_home_path, :alert => "Something went wrong. Try again?"
 		end
 	end
 
@@ -39,6 +39,12 @@ class TestsController < ApplicationController
 	def upgrade
 		@current_user = current_user
 	end
+
+	def decrementbalance
+		@test = Test.find_by_cwurl(params[:id])
+  		@test.user.balance = @test.user.balance - 1
+  		@test.user.save
+  	end
 
 	def charge
 		raise ActiveRecord::RecordNotFound unless [1,5].include?(params[:plan].to_i) #does this array include these numbers.. did dude try to hack

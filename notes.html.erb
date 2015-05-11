@@ -1,11 +1,51 @@
-?- change user balance after complete - screenleap.onScreenShareEnd()
+?- change user balance and complete date after - screenleap.onScreenShareEnd()
 
 ?-
 page to dl the vids? 
-just forward emails to user?
 only if video >1 minute
 
-BUG: empty field submission gives err. validation on home... something must be present
+-BUG: empty field submission gives err. validation on home... something must be present
+
+-***copy text
+-cakewalk.io hi@cakewalk.io
+-mailers: user registration, completed user tests?, payment receipt
+-design: start page, add a thing that says dont forget to turn off screenshare
+-send to adriano and low key homies for feedback
+
+
+					screenleap.onScreenShareEnd = function() {
+						var element = document.getElementById("something");
+						element.innerHTML = "Screen Recording Ended";
+						element.className = "btn redplanbutton";
+						//update user balance
+					    $.ajax({
+					    	url: "users/decrementbalance",
+					    	type: 'POST'
+					    	success: function () {
+		                    // it worked!  
+		                	}
+						});
+			      		//update complete_date
+					    };
+
+
+
+
+					screenleap.onScreenShareEnd = function() {
+						var element = document.getElementById("something");
+						element.innerHTML = "Screen Recording Ended";
+						element.className = "btn redplanbutton";
+						//update user balance
+					    var userBalance = <%= @test.user.balance %>
+			      		userBalance--;
+			      		//update complete_date
+					    };
+
+
+
+whats a cakewalk?
+a cakewalk is a bite sized user test.
+
 
 <%= form_for @current_user, url: chargeforone_tests_path, method: 'POST' do %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
