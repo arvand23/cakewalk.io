@@ -7,6 +7,7 @@ class TestsController < ApplicationController
 		if @url.save
 			redirect_to static_home_path, :notice => "Excellent! Now, share your Cakewalk link with testers."
 		else
+			@userurls= current_user.tests.all(:order => 'created_at DESC') #needed to add this for validation to work. before everytime validation failed i got undefined method `each' for nil:NilClass validation
 			render static_home_path, :alert => "Something went wrong. Try again?"
 		end
 	end

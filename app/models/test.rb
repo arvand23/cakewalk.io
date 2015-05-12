@@ -2,7 +2,7 @@ class Test < ActiveRecord::Base
 	belongs_to :user
 
 	#validate url
-	#validates :url, presence: true
+	validates :url, presence: true
 
 	#sticks http at beggining so that redirects and links on start work
 	PROTOCOLS = ["http://", "https://", "ftp://", "ftps://"]
