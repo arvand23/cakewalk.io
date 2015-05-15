@@ -2,4 +2,4 @@ stripe_publishable_key: pk_test_iMryihmtQzjn1trPzaM6pIfR
 stripe_secret_key: sk_test_FfwGbXpyiZ3fpwE2p8TEyWdq 
 
 sendgrid_username: arvando
-sendgrid_password: 1syruppypooshart
+sendgrid_password: 1syruppypooshart 

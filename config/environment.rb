@@ -13,3 +13,4 @@ ActionMailer::Base.smtp_settings = {
   :domain         => 'https://protected-plateau-6103.herokuapp.com',
   :enable_starttls_auto => true
 }
+ 
