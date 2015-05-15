@@ -48,6 +48,7 @@ class TestsController < ApplicationController
   	end
 
 	def charge
+		@current_user = current_user
 		raise ActiveRecord::RecordNotFound unless [1,5].include?(params[:plan].to_i) #does this array include these numbers.. did dude try to hack
 		# Amount in cents
 		  @amount = params[:plan].to_i == 1 ? 2500 : 10000 
@@ -68,6 +69,7 @@ class TestsController < ApplicationController
 		  @current_user.balance += params[:plan].to_i
 		  @current_user.save
 		  redirect_to static_home_path, :notice => "You just bought #{params[:plan]} credit." 
+		  NotificationMailer.receipt(@current_user).deliver
 
 		rescue Stripe::CardError => e
 		  flash[:error] = e.message
