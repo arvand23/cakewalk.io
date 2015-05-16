@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "play@syruplabs.com"
+  default from: "play@syruplabs.co"
 
   def receipt(current_user)
   	@current_user = current_user
