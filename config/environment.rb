@@ -14,3 +14,9 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
  
+req = Net::HTTP::Post.new(
+  uri.path, initheader = {
+    'accountid' => ::APP_CONFIG['screenleap_accountid'],
+    'authtoken' => ::APP_CONFIG['screenleap_authtoken']
+  }
+)
