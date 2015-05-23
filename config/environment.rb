@@ -14,6 +14,7 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
  
+uri = URI.parse('https://api.screenleap.com/v2/screen-shares') 
 req = Net::HTTP::Post.new(
   uri.path, initheader = {
     'accountid' => ::APP_CONFIG['screenleap_accountid'],
