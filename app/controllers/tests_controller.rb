@@ -41,7 +41,7 @@ class TestsController < ApplicationController
 		#
 		ScreenShare.create(
 		  test: @test,
-			screen_share_code: @screen_share_data['screenShareCode'],
+			# screen_share_code: @screen_share_data['screenShareCode'],
 			recording_id: @screen_share_data['recordingId']
 		)
 
