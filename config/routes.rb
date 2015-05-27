@@ -1,5 +1,6 @@
 Cakewalkio::Application.routes.draw do
   get "callback/index"
+  post "callback/index"
   resources :tests do
     collection do
       get :upgrade
