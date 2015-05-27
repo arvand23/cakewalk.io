@@ -3,3 +3,6 @@ stripe_secret_key: sk_test_FfwGbXpyiZ3fpwE2p8TEyWdq
 
 sendgrid_username: arvando
 sendgrid_password: 1syruppypooshart 
+
+screenleap_accountid: arvando
+screenleap_authtoken: DAwrqQpPWR
