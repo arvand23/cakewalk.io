@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429001118) do
+ActiveRecord::Schema.define(version: 20150523112951) do
+
+  create_table "screen_share_events", force: true do |t|
+    t.string   "event_type"
+    t.integer  "screen_share_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "screen_share_files", force: true do |t|
+    t.string   "url"
+    t.integer  "screen_share_event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "screen_shares", force: true do |t|
+    t.string   "recording_id"
+    t.integer  "test_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tests", force: true do |t|
     t.integer  "user_id"

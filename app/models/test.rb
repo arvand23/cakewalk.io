@@ -1,5 +1,6 @@
 class Test < ActiveRecord::Base
 	belongs_to :user
+	has_many :screen_shares
 
 	#validate url
 	validates :url, presence: true

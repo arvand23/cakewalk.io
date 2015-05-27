@@ -1,0 +1,22 @@
+<%= link_to 'Get all screen shares', admin_screen_shares_path ,class: 'btn btn-default' %>
+<%= link_to 'Get all screen share events', admin_screen_share_events_path, class: 'btn btn-default' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tests.each do |test| -%>
+    <tr>
+      <td><%= test.url %></td>
+      <td><%= link_to 'show', admin_screen_shares_path(id: test.id) %></td>
+    </tr>
+    <% end -%>
+  </tbody>
+</table>
+
+<%= will_paginate @tests %>

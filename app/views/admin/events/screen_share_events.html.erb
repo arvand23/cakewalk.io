@@ -1,0 +1,26 @@
+<%= link_to 'Get all screen shares', admin_screen_shares_path ,class: 'btn btn-default' %>
+<%= link_to 'Get all screen share events', admin_screen_share_events_path, class: 'btn btn-default' %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>URL</th>
+    <th>Recording Id</th>
+    <th>Event type</th>
+    <th>file</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @screen_share_events.each do |item| -%>
+    <tr>
+      <td><%= item.share_event.test.url %></td>
+      <td><%= item.share_event.recording_id %></td>
+      <td><%= item.event_type %></td>
+      <td><%= item.screen_share_file_ids %></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+
+<%= will_paginate @screen_share_events %>

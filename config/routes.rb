@@ -1,4 +1,5 @@
 Cakewalkio::Application.routes.draw do
+  get "callback/index"
   resources :tests do
     collection do
       get :upgrade
@@ -8,6 +9,12 @@ Cakewalkio::Application.routes.draw do
     member do
       get :start
     end
+  end
+
+  namespace :admin do
+    get 'tests' => 'events#index'
+    get 'screen_shares' => 'events#screen_shares'
+    get 'screen_share_events' => 'events#screen_share_events'
   end
 
 put 'tests/decrementbalance' => 'tests#decrementbalance'
