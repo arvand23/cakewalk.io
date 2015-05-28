@@ -6,9 +6,9 @@ class CallbackController < ApplicationController
       event_type = params['eventType']
       recording_id = params['callback']['recordingId']
 
-      @screen_share = ScreenShare.find_by(recording_id: recording_id)
+      @screen_share = ScreenShare.find_by(recording_id: recording_id.to_s)
       if event_type == 'PRESENTER_CONNECT' &&  @screen_share == nil
-        @screen_share = ScreenShare.create(recording_id: recording_id)
+        @screen_share = ScreenShare.create(recording_id: recording_id.to_s)
       end
 
       @screen_share_event = ScreenShareEvent.create(
