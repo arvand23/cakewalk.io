@@ -1,4 +1,6 @@
 class CallbackController < ApplicationController
+  skip_before_filter :protect_from_forgery
+  
   def index
     if params['callback']
       event_type = params['eventType']
