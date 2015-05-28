@@ -6,6 +6,7 @@
     <tr>
       <th>URL</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -13,6 +14,7 @@
     <% @tests.each do |test| -%>
     <tr>
       <td><%= test.url %></td>
+      <td><%= test.created_at.to_s(:short) %></td>
       <td><%= link_to 'show', admin_screen_shares_path(id: test.id) %></td>
     </tr>
     <% end -%>

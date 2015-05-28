@@ -7,6 +7,7 @@
     <th>URL</th>
     <th>Recording Id</th>
     <th></th>
+    <th></th>
   </tr>
   </thead>
 
@@ -15,6 +16,7 @@
     <tr>
       <td><%= item.test.url %></td>
       <td><%= item.recording_id %></td>
+      <td><%= item.created_at.to_s(:short) %></td>
       <td><%= link_to 'show', admin_screen_share_events_path(id: item.id) %></td>
     </tr>
   <% end -%>

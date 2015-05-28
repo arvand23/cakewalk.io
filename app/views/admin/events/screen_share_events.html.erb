@@ -8,6 +8,7 @@
     <th>Recording Id</th>
     <th>Event type</th>
     <th>file</th>
+    <th></th>
   </tr>
   </thead>
 
@@ -18,6 +19,7 @@
       <td><%= item.screen_share.recording_id %></td>
       <td><%= item.event_type %></td>
       <td><%= item.screen_share_file_ids %></td>
+      <td><%= item.created_at.to_s(:short) %></td></td>
     </tr>
   <% end -%>
   </tbody>
