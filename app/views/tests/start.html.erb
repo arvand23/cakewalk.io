@@ -24,39 +24,33 @@
 			          console.log('Explaining how to download');
 			      }
 
-            var screenShareData = <%= @screenShareData.to_json.html_safe %>;
+            var screenShareData = <%= @screen_share_data.to_json.html_safe %>;
             screenleap.startSharing('EXTENSION', screenShareData , {
                 nativeDownloadStarting: onNativeDownloadStartCallback
             });
 
-            screenleap.onScreenShareStart = function() {
-                var element = document.getElementById("something");
-                var link = document.getElementById("goto");
-                element.innerHTML = "Screen Recording in Progress";
-                element.className = "btn redplanbutton";
-                link.innerHTML = "<%= @test.url %>";
-            };
-
-					  screenleap.onScreenShareEnd = function() {
-						    var element = document.getElementById("something");
-						    element.innerHTML = "Screen Recording Ended";
-						    element.className = "btn redplanbutton";
-						    //update user balance
-					      $.ajax({
-					    	  url: "/tests/decrementbalance",
-					    	  type: 'PUT'
-						    });
-                //update complete_date
-					};
-					
+//            screenleap.onScreenShareStart = function() {
+//                var element = document.getElementById("something");
+//                var link = document.getElementById("goto");
+//                element.innerHTML = "Screen Recording in Progress";
+//                element.className = "btn redplanbutton";
+//                link.innerHTML = "<%= @test.url %>";
+//            };
+//
+//					  screenleap.onScreenShareEnd = function() {
+//						    var element = document.getElementById("something");
+//						    element.innerHTML = "Screen Recording Ended";
+//						    element.className = "btn redplanbutton";
+//						    //update user balance
+//					      $.ajax({
+//					    	  url: "/tests/decrementbalance",
+//					    	  type: 'PUT'
+//						    });
+//                //update complete_date
+//					};
           e.preventDefault();
 			  });
 			</script>
-
-		
-      <% @screenShareData %>
-
-
 	<% else %>
 	Please contact <%= @test.user.email %>. They don't have enough credit to conduct this cakewalk.
 	<% end %>

@@ -54,3 +54,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'will_paginate'
+gem 'byebug'
