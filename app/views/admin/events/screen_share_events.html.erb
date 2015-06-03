@@ -15,7 +15,7 @@
   <tbody>
   <% @screen_share_events.each do |item| -%>
     <tr>
-      <td><%= item.screen_share.test.url %></td>
+      <td><%= item.screen_share.test.nil? ? 'N/A' : item.screen_share.test.url %></td>
       <td><%= item.screen_share.recording_id %></td>
       <td><%= item.event_type %></td>
       <td><%= item.screen_share_file_ids %></td>
