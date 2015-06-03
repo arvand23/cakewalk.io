@@ -14,7 +14,7 @@
   <tbody>
   <% @screen_shares.each do |item| -%>
     <tr>
-      <td><%= item.test.url.nil? ? 'N/A' : item.test.url %></td>
+      <td><%= item.test.nil? ? 'N/A' : item.test.url %></td>
       <td><%= item.recording_id %></td>
       <td><%= item.created_at.to_s(:short) %></td>
       <td><%= link_to 'show', admin_screen_share_events_path(id: item.id) %></td>
