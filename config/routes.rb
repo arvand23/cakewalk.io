@@ -9,6 +9,7 @@ Cakewalkio::Application.routes.draw do
     end
     member do
       get :start
+      get :results
     end
   end
 

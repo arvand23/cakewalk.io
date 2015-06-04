@@ -86,6 +86,9 @@ class TestsController < ApplicationController
 		  redirect_to root_path, :notice => "Stripe err"
 	end
 
+	def results
+		@files = ScreenShareFile.joins(:screen_share_event => :screen_share).where('screen_shares.test_id = ?', params[:id])
+	end
 
 	private
 		def url_params
