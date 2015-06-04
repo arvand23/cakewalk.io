@@ -22,12 +22,12 @@ class Admin::EventsController < ApplicationController
     if params[:id]
       @screen_share_events = ScreenShareEvent.joins(:screen_share)
                                              .where(screen_share_id: params[:id])
-                                             .order('screen_shares.recording_id' => :desc)
+                                             .order('screen_shares.recording_id DESC')
                                              .order(created_at: :desc)
                                              .paginate(:page => params[:page], :per_page => 30)
     else
       @screen_share_events = ScreenShareEvent.joins(:screen_share)
-                                             .order('screen_shares.recording_id' => :desc)
+                                             .order('screen_shares.recording_id DESC')
                                              .order(created_at: :desc)
                                              .paginate(:page => params[:page], :per_page => 30)
     end
