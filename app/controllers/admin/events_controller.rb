@@ -1,7 +1,7 @@
 class Admin::EventsController < ApplicationController
   def index
     @tests = current_user.tests
-                 .order(created_at: :asc)
+                 .order(created_at: :desc)
                  .paginate(:page => params[:page], :per_page => 30)
   end
 
@@ -9,11 +9,11 @@ class Admin::EventsController < ApplicationController
     if params[:id]
       @screen_shares = ScreenShare.where(test_id: params[:id])
                                   .order(:recording_id)
-                                  .order(created_at: :asc)
+                                  .order(created_at: :desc)
                                   .paginate(:page => params[:page], :per_page => 30)
     else
       @screen_shares = ScreenShare.order(:recording_id)
-                                  .order(created_at: :asc)
+                                  .order(created_at: :desc)
                                   .paginate(:page => params[:page], :per_page => 30)
     end
   end
@@ -23,12 +23,12 @@ class Admin::EventsController < ApplicationController
       @screen_share_events = ScreenShareEvent.joins(:screen_share)
                                              .where(screen_share_id: params[:id])
                                              .order('screen_shares.recording_id')
-                                             .order(:created_at => :asc)
+                                             .order(:created_at => :desc)
                                              .paginate(:page => params[:page], :per_page => 30)
     else
       @screen_share_events = ScreenShareEvent.joins(:screen_share)
                                              .order('screen_shares.recording_id')
-                                             .order(:created_at => :asc)
+                                             .order(:created_at => :desc)
                                              .paginate(:page => params[:page], :per_page => 30)
     end
   end
