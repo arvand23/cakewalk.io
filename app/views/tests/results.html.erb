@@ -1,7 +1,7 @@
 <% if @files.blank? %>
-Your file isn't ready yet
+Your recordings aren't ready yet. If it's not ready for 3 days, please contact help@cakewalk.io. Your recordings will be ready instantaneously when we're out of beta.
 <% else %>
-You file is ready! Download it before <%= @downloadby %>.
+You Cakewalk recording is ready to download! Get it before <%= @downloadby %>.
 <ul>
   <% @files.each do |file | -%>
     <%= link_to file.url, file.url %>
