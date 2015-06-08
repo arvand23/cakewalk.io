@@ -9,7 +9,7 @@
   <% @files.each do |file | -%>
     <%= link_to "Recording ID #{file.screen_share_event_id}", file.url %>
     <%= file.created_at.to_s(:short) %>
-    <%= file.created_at+7.day %>
+    <%= file.downloadby.to_s(:short) %>
   <% end %>
 </ul>
 <% end %>
