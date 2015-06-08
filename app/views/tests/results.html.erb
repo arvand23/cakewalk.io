@@ -5,7 +5,7 @@
 <h1>You Cakewalk recordings are ready to download! Download them before the links expire (links won't expire when we're out of Beta).</h1>
 <ul>
   <% @files.each do |file | -%>
-    <%= link_to file.url, file.url %>
+    <%= link_to "poop", file.url %>
     <%= file.screen_share_event_id %>
     <%= file.created_at.to_s(:short) %>
   <% end %>
