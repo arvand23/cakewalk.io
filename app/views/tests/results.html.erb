@@ -1,5 +1,7 @@
+<%= @currentfile.url %> Recordings
+
 <% if @files.blank? %>
-<h1>Your recordings aren't ready yet. If they're not ready for 3 days, please contact help@cakewalk.io.</h1>
+<h1>Your recordings haven't been processed yet.</h1>
 <h2>(Your recordings will be ready instantaneously when we're out of beta.)</h2>
 <% else %>
 <h1>You Cakewalk recordings are ready to download! Download them before the links expire (links won't expire when we're out of Beta).</h1>
@@ -7,6 +9,7 @@
   <% @files.each do |file | -%>
     <%= link_to "Recording ID #{file.screen_share_event_id}", file.url %>
     <%= file.created_at.to_s(:short) %>
+    <%= file.created_at+7.days.to_s(:short) %>
   <% end %>
 </ul>
 <% end %>
