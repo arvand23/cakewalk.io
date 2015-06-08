@@ -7,7 +7,12 @@
   <% @files.each do |file | -%>
     <%= link_to file.url, file.url %>
     <%= file.screen_share_event_id %>
-    <%= @file.created_at %>
+    <%= file.created_at %>
   <% end %>
 </ul>
 <% end %>
+
+
+
+
+<!-- URL, when it expires, and ID -->
