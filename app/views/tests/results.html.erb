@@ -1,16 +1,18 @@
-<%= @currentfile.url %> Recordings
+<h1 class="h1results"><%= @currentfile.url %> results</h1>
 
 <% if @files.blank? %>
-<h1>Your recordings haven't been processed yet.</h1>
-<h2>(Your recordings will be ready instantaneously when we're out of beta.)</h2>
+<h2 class="h2results">Your recordings haven't been processed yet.</h2>
+<h2 class="h3results">(Your recordings will be instantly ready when we're out of Beta.)</h2>
 <% else %>
-<h1>You Cakewalk recordings are ready to download! Download them before the links expire (links won't expire when we're out of Beta).</h1>
+<h2 class="h2results">You Cakewalk recordings are ready to download! Get them before the download links expire (nothing expires once we're out of Beta).</h2>
 <ul>
-  <% @files.each do |file | -%>
-    <%= link_to "Recording ID #{file.screen_share_event_id}", file.url %>
-    <%= file.created_at.to_s(:short) %>
-    <%= file.created_at+7.day %> <!-- format time -->
-  <% end %>
+	<div class="results">
+	  <% @files.each do |file | -%>
+	    <%= link_to "Recording ID#{file.screen_share_event_id}", file.url %>
+	    <!--<%= file.created_at.to_s(:short) %>-->
+	    <%= file.created_at+7.day %> <!-- format time --></br></br>
+	  <% end %>
+	</div>
 </ul>
 <% end %>
 
