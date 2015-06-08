@@ -93,7 +93,7 @@ class TestsController < ApplicationController
 
 	def results
 		@files = ScreenShareFile.joins(:screen_share_event => :screen_share).where('screen_shares.test_id = ?', params[:id])
-		@downloadby = @files.created_at+7.day
+		@downloadby = 8 #@files.created_at+7.day
 
 	end
 
