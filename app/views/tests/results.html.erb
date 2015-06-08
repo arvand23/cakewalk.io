@@ -1,7 +1,7 @@
 <% if @files.blank? %>
 Your file isn't ready yet
 <% else %>
-You file is ready! Download it before <%= @downlodby %>.
+You file is ready! Download it before <%= @downloadby %>.
 <ul>
   <% @files.each do |file | -%>
     <%= link_to file.url, file.url %>
