@@ -1,10 +1,11 @@
 <% if @files.blank? %>
 Your recordings aren't ready yet. If it's not ready for 3 days, please contact help@cakewalk.io. Your recordings will be ready instantaneously when we're out of beta.
 <% else %>
-You Cakewalk recording is ready to download! Get it before <%= @downloadby %>.
+You Cakewalk recordings are ready to download! Download them before the links expire (links won't expire when we're out of Beta).
 <ul>
   <% @files.each do |file | -%>
     <%= link_to file.url, file.url %>
+    <%= @downloadby %>
   <% end %>
 </ul>
 <% end %>
