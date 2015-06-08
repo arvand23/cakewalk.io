@@ -1,5 +1,73 @@
-?- change user balance and complete date after - screenleap.onScreenShareEnd()
+Questions:
+1/- file [] .screen_share_ids
 
+2/- events controller #23 #29 screen share events action
+  def screen_share_events
+    if params[:id]
+      @screen_share_events = ScreenShareEvent.joins(:screen_share)  #grabbing corresponding screen share
+                                             .where(screen_share_id: params[:id])  #filter by the specific id
+
+its basically an inner join
+
+like this:
+ user .... contacts (user_id)
+
+inner join
+left join
+righ join
+outter join
+
+select users.* inner join on users.id = contact.user_id 
+
+
+3/- screen_shares.html.erb #17
+      <td><%= item.test.nil? ? 'N/A' : item.test.url %></td> <!-- if else statement -->
+
+
+4/- tests controller #90
+are @files nil until you get a recording complete event? i need to do if nil? then 'your file isnt ready'
+
+@ files are empty
+read into inner joins
+
+5- where do the following get generated:
+passed through a hash from the api. in callback controller
+
+recording_id
+
+event_type
+
+screensharefile.url
+
+6- change user balance, testscontroller#decrementbalance, after onScreenShareStart 
+
+
+
+
+
+
+gated sign up? register then has_access?
+WannaBeUsers email:string has_access:boolean
+
+sign up and sign in page: if wannabeusers !has_access==true
+
+
+
+put in email. admin says yes. receive email with link to sign up
+
+
+
+
+
+
+***check to see if local is up to date ***
+*2- if .url.count = 0 then your video url isnt available yet (this is why we're in beta)
+*3- style url page
+
+
+4- change user balance and complete date after - screenleap.onScreenShareEnd()
+<!-- 150 for unlimited (expires in 3 months) -->
+5- if admin? on admin pages.
 ?-
 page to dl the vids? 
 only if video >1 minute
@@ -7,12 +75,15 @@ only if video >1 minute
 -cakewalk.io hi@cakewalk.io
 -design: start page, add a thing next to recording now button that says dont forget to turn off screenshare
 -send to adriano and low key homies for feedback
+-SSL
 ---
--copy text
 -how it works (on home page)
--custom tasks?
+-how startups are cakewalking section on home page
+-custom tasks?... after url is shortened, next to results button is edit tasks?
 -html5 video, css animations
 -copy button
+-custom routes ie /signup, rather than static_pages/signup
+-add variables to sass css
 
 
 					screenleap.onScreenShareEnd = function() {

@@ -1,5 +1,10 @@
+<% if @files.blank? %>
+Your file isn't ready yet
+<% else %>
+You file is ready! Download it before <% @files.created_at+7.day %>.
 <ul>
   <% @files.each do |file | -%>
     <%= link_to file.url, file.url %>
   <% end %>
 </ul>
+<% end %>

@@ -52,9 +52,14 @@ class TestsController < ApplicationController
 	end
 
 	def decrementbalance
-		@test = Test.find_by_cwurl(params[:id])
-  		@test.user.balance = @test.user.balance - 1
-  		@test.user.save
+
+		@currenttest = Test.find_by_cwurl(params[:id])
+  		@currenttest.user.balance == 999 #@test.user.balance - 1
+  		@currenttest.user.save
+
+  		respond_to do |format|
+  			format.json { render json: { success: true} }
+  		end
   	end
 
 	def charge

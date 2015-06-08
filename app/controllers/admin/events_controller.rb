@@ -20,8 +20,8 @@ class Admin::EventsController < ApplicationController
 
   def screen_share_events
     if params[:id]
-      @screen_share_events = ScreenShareEvent.joins(:screen_share)
-                                             .where(screen_share_id: params[:id])
+      @screen_share_events = ScreenShareEvent.joins(:screen_share)  #grabbing corresponding screen share
+                                             .where(screen_share_id: params[:id])  #filter by the specific id
                                              .order('screen_shares.recording_id DESC')
                                              .order(created_at: :desc)
                                              .paginate(:page => params[:page], :per_page => 30)
@@ -33,3 +33,9 @@ class Admin::EventsController < ApplicationController
     end
   end
 end
+
+
+
+
+
+
