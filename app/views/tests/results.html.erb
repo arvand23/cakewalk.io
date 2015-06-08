@@ -7,7 +7,7 @@
   <% @files.each do |file | -%>
     <%= link_to file.url, file.url %>
     <%= file.screen_share_event_id %>
-    <%= file.created_at %>
+    <%= file.created_at.to_s(:short) %>
   <% end %>
 </ul>
 <% end %>
@@ -15,4 +15,4 @@
 
 
 
-<!-- URL, when it expires, and ID -->
+<!-- URL, when it expires, and ID (use in the anchor link, ie Recording ID#<%-%>), order by desc created at date -->
