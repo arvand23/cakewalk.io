@@ -4,10 +4,11 @@
 <h2 class="h2results">Your recordings haven't been processed yet.</h2>
 <h2 class="h3results">(Your recordings will be instantly ready when we're out of Beta.)</h2>
 <% else %>
-<h2 class="h2results">You Cakewalk recordings are ready to download! Get them before the download links expire (nothing expires once we're out of Beta).</h2>
+<h2 class="h2results">You Cakewalk recordings are ready to download!</h2>
+<h2 class="h3results">Save them before the download links expire (once we're out of beta, we'll save them for you).</h3></br></br></br></br>
 <ul>
 	<div class="results">
-	  <% @files.each do |file | -%>
+	  <% @filesordered.each do |file | -%>
 	    <%= link_to "Recording ID#{file.screen_share_event_id}", file.url %>
 	    <!--<%= file.created_at.to_s(:short) %>-->
 	    Link expires: <%= file.created_at+7.day %> <!-- format time --></br></br>
