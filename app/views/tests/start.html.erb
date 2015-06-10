@@ -35,14 +35,18 @@
                 var link = document.getElementById("goto");
                 element.innerHTML = "Screen Recording in Progress";
                 element.className = "btn redplanbutton";
+                element.href = "<%= @test.url %>";
                 link.innerHTML = "Go to: <%= @test.url %>";
             };
 
 			screenleap.onScreenShareEnd = function() {
 						console.log("screen share end");
 						var element = document.getElementById("something");
+						var link = document.getElementById("goto");
 						element.innerHTML = "Screen Recording Ended";
+						element.href = "<%= @test.url %>";
 						element.className = "btn redplanbutton";
+						link.innerHTML = " "
 						//update user balance
 					    $.ajax({
 					    	url: "<%= decrementbalance_tests_path %>",

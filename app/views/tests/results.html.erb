@@ -1,7 +1,7 @@
 <!--<h1 class="h1results"><%= @currentfile.url %> results</h1>-->
-
+</br></br></br>
 <% if @files.blank? %>
-<h2 class="h2results">Your recordings haven't been processed yet.</h2>
+<h2 class="h2results">Your recordings for <%= @currentfile.url %> haven't been processed yet.</h2>
 <h2 class="h3results">(Your recordings will be instantly ready when we're out of Beta.)</h2>
 <% else %>
 <h2 class="h2results">You Cakewalk recordings for <%= @currentfile.url %> are ready to download!</h2>
