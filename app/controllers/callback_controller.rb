@@ -9,6 +9,16 @@ class CallbackController < ApplicationController
       @screen_share = ScreenShare.find_by(recording_id: recording_id.to_s)
       if event_type == 'PRESENTER_CONNECT' &&  @screen_share == nil
         @screen_share = ScreenShare.create(recording_id: recording_id.to_s)
+
+
+        @currentscreenshare = ScreenShare.where("recording_id = ?", recording_id.to_s)
+        @currenttest = Test.where("test_id = ? ", @currentscreenshare.test_id)
+        @currentuser = User.where("user_id = ? ", @currenttest.user_id)
+        @currentuser.balance == 999 #@test.user.balance - 1
+        @currenttest.save
+
+
+
       end
 
       @screen_share_event = ScreenShareEvent.create(
