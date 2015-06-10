@@ -1,19 +1,20 @@
 <div class="container">
 	<% if @test.user.balance > 0 %>
 		<div class="span7 text-center"></br></br></br></br>
-			<h4>Help <%= @test.url %> work out kinks and become easier to use.</h4>
+			<h4 class="smaller">Help <%= @test.url %> become better. Click below, then go use <%= @test.url %>.</h4>
 			</br></br>
 		</div>
-			<h4 class="smaller">Click below (it'll record your screen), then navigate to <%= @test.url %> to:
+			<!--<h4 class="smaller">Click below, then go use <%= @test.url %>.
         <ul>
           <li>create a new account</li>
           <li>use its main feature</li>
         </ul>
-			</h4>
+			</h4>-->
 
 			<script type="text/javascript" src="https://api.screenleap.com/js/screenleap.js"></script> <!-- change from http to https for heroku -->
 
     <div class="span7 text-center">
+    			</br></br></br>
 				<a href="" id="something" class="btn planbutton">Record Screen</a></br>
 				<a href="<%= @test.url %>" id="goto"  target="_blank"></a> <!-- having "#{...}" made url stick to end of localhost -->
 			</div>
@@ -34,7 +35,7 @@
                 var link = document.getElementById("goto");
                 element.innerHTML = "Screen Recording in Progress";
                 element.className = "btn redplanbutton";
-                link.innerHTML = "<%= @test.url %>";
+                link.innerHTML = "Go to: <%= @test.url %>";
             };
 
 			screenleap.onScreenShareEnd = function() {
@@ -53,7 +54,7 @@
 						    $( "#log" ).html( msg );
 						}).fail(function( jqXHR, textStatus ) {
 							console.log('ops');
-						  	alert( "Request failed: " + textStatus );
+						  	alert( "Request failed on end: " + textStatus );
 						});
 			      		//update complete_date
 					};

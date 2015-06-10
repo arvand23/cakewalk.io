@@ -1,10 +1,10 @@
-<h1 class="h1results"><%= @currentfile.url %> results</h1>
+<!--<h1 class="h1results"><%= @currentfile.url %> results</h1>-->
 
 <% if @files.blank? %>
 <h2 class="h2results">Your recordings haven't been processed yet.</h2>
 <h2 class="h3results">(Your recordings will be instantly ready when we're out of Beta.)</h2>
 <% else %>
-<h2 class="h2results">You Cakewalk recordings are ready to download!</h2>
+<h2 class="h2results">You Cakewalk recordings for <%= @currentfile.url %> are ready to download!</h2>
 <h2 class="h3results">Save them before the download links expire (once we're out of beta, we'll save them for you).</h3></br></br></br></br>
 <ul>
 	<div class="results">
@@ -16,8 +16,3 @@
 	</div>
 </ul>
 <% end %>
-
-
-
-
-<!-- URL, when it expires, and ID (use in the anchor link, ie Recording ID#<%-%>), order by desc created at date -->
