@@ -57,9 +57,9 @@ class TestsController < ApplicationController
   		@currenttest.user.balance = 999 #@test.user.balance - 1
   		@currenttest.user.save
 
-  		respond_to do |format|
-  			format.json { render json: { success: true} }
-  		end
+  		#respond_to do |format|
+  		#	format.json { render json: { success: true} }
+  		#end
   	end
 
 	def charge

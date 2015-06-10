@@ -61,7 +61,7 @@
 					    	url: "<%= decrementbalance_tests_path %>",
 					        type: 'PUT',
 					    	dataType: 'json',
-					    	data: {id: <%= @test.id %>}
+					    	//data: {id: <%= @test.id %>}
 						}).done(function( msg ) {
 							console.log('got it');
 						    $( "#log" ).html( msg );
