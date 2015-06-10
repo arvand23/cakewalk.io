@@ -17,6 +17,11 @@
     			</br></br></br>
 				<a href="" id="something" class="btn planbutton">Record Screen</a></br>
 				<a href="<%= @test.url %>" id="goto"  target="_blank"></a> <!-- having "#{...}" made url stick to end of localhost -->
+			</br></br></br></br></br>
+				<img src="<%= image_url 'pixel.jpg' %>" id="stopsharing">
+				<!-- <img> on your browser
+				Click <img> at the top right corner of your browser. -->
+
 			</div>
 
 			<script type="text/javascript">
@@ -33,10 +38,12 @@
             screenleap.onScreenShareStart = function() {  //make it flash slowly
                 var element = document.getElementById("something");
                 var link = document.getElementById("goto");
+                var stopsharing = document.getElementById("stopsharing");
                 element.innerHTML = "Screen Recording in Progress";
                 element.className = "btn redplanbutton";
                 element.href = "<%= @test.url %>";
                 link.innerHTML = "Go to: <%= @test.url %>";
+                stopsharing.src = "<%= image_url 'stopsharing.jpg' %>";
             };
 
 			screenleap.onScreenShareEnd = function() {
