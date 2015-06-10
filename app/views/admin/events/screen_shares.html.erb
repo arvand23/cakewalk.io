@@ -1,26 +1,31 @@
-<%= link_to 'Get all screen shares', admin_screen_shares_path ,class: 'btn btn-default' %>
-<%= link_to 'Get all screen share events', admin_screen_share_events_path, class: 'btn btn-default' %>
 
-<table class="table">
-  <thead>
-  <tr>
-    <th>URL</th>
-    <th>Recording Id</th>
-    <th></th>
-    <th></th>
-  </tr>
-  </thead>
+<% if signed_in? && current_user.admin? %>
+  <%= link_to 'Get all screen shares', admin_screen_shares_path ,class: 'btn btn-default' %>
+  <%= link_to 'Get all screen share events', admin_screen_share_events_path, class: 'btn btn-default' %>
 
-  <tbody>
-  <% @screen_shares.each do |item| -%>
+  <table class="table">
+    <thead>
     <tr>
-      <td><%= item.test.nil? ? 'N/A' : item.test.url %></td> <!-- if else statement -->
-      <td><%= item.recording_id %></td>
-      <td><%= item.created_at.to_s(:short) %></td>
-      <td><%= link_to 'show', admin_screen_share_events_path(id: item.id) %></td>
+      <th>URL</th>
+      <th>Recording Id</th>
+      <th></th>
+      <th></th>
     </tr>
-  <% end -%>
-  </tbody>
-</table>
+    </thead>
 
-<%= will_paginate @screen_shares %>
+    <tbody>
+    <% @screen_shares.each do |item| -%>
+      <tr>
+        <td><%= item.test.nil? ? 'N/A' : item.test.url %></td> <!-- if else statement -->
+        <td><%= item.recording_id %></td>
+        <td><%= item.created_at.to_s(:short) %></td>
+        <td><%= link_to 'show', admin_screen_share_events_path(id: item.id) %></td>
+      </tr>
+    <% end -%>
+    </tbody>
+  </table>
+
+  <%= will_paginate @screen_shares %>
+<% else %>
+404 error
+<% end %>

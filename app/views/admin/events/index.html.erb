@@ -1,24 +1,28 @@
-<%= link_to 'Get all screen shares', admin_screen_shares_path ,class: 'btn btn-default' %>
-<%= link_to 'Get all screen share events', admin_screen_share_events_path, class: 'btn btn-default' %>
+<% if signed_in? && current_user.admin? %>  
+  <%= link_to 'Get all screen shares', admin_screen_shares_path ,class: 'btn btn-default' %>
+  <%= link_to 'Get all screen share events', admin_screen_share_events_path, class: 'btn btn-default' %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>URL</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @tests.each do |test| -%>
-    <tr>
-      <td><%= test.url %></td>
-      <td><%= test.created_at.to_s(:short) %></td>
-      <td><%= link_to 'show', admin_screen_shares_path(id: test.id) %></td>
-    </tr>
-    <% end -%>
-  </tbody>
-</table>
+    <tbody>
+      <% @tests.each do |test| -%>
+      <tr>
+        <td><%= test.url %></td>
+        <td><%= test.created_at.to_s(:short) %></td>
+        <td><%= link_to 'show', admin_screen_shares_path(id: test.id) %></td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>
 
-<%= will_paginate @tests %>
+  <%= will_paginate @tests %>
+<% else %>
+404 error
+<% end %>
