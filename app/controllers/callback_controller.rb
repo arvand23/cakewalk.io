@@ -13,7 +13,7 @@ class CallbackController < ApplicationController
         @currenttest = Test.where("id = ? ", @screen_share.test_id)
         @currentuser = User.where("id = ? ", @currenttest.user_id)
         @currentuser.balance == 999 #@test.user.balance - 1
-        @currenttest.save
+        @currentuser.save
 
       end
 
