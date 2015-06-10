@@ -14,8 +14,8 @@ class CallbackController < ApplicationController
         @currentscreenshare = ScreenShare.where("recording_id = ?", recording_id.to_s)
         @currenttest = Test.where("test_id = ? ", @currentscreenshare.test_id)
         @currentuser = User.where("user_id = ? ", @currenttest.user_id)
-        @currentuser.balance == 999 #@test.user.balance - 1
-        @currenttest.save
+        @currentuser.user.balance == 999 #@test.user.balance - 1
+        @currenttest.user.save
 
 
 
