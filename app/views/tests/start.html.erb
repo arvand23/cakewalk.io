@@ -50,6 +50,8 @@
 						console.log("screen share end");
 						var element = document.getElementById("something");
 						var link = document.getElementById("goto");
+						var stopsharing = document.getElementById("stopsharing");
+						stopsharing.src = "<%= image_url 'pixel.jpg' %>";
 						element.innerHTML = "Screen Recording Ended";
 						element.href = "<%= @test.url %>";
 						element.className = "btn redplanbutton";
