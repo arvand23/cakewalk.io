@@ -16,9 +16,9 @@ class CallbackController < ApplicationController
         #@currentuser.save
 
 
-        @currentuser = @screen_share.test.user 
-        @currentuser.balance = @currentuser.balance - 1
-        @currentuser.save
+        #@currentuser = @screen_share.test.user 
+        #@currentuser.balance = @currentuser.balance - 1
+        #@currentuser.save
 
 
 

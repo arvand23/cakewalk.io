@@ -39,11 +39,19 @@ class TestsController < ApplicationController
 
 		# we need to store screenShareCode to track a recordering.
 		#
-		ScreenShare.create(
+		if ScreenShare.create(
 		  test: @test,
 			# screen_share_code: @screen_share_data['screenShareCode'],
 			recording_id: @screen_share_data['recordingId']
 		)
+
+		@currentuser = @test.user
+        @currentuser.balance = @currentuser.balance - 1
+        @currentuser.save
+
+    	else
+    		render text: " Error"
+    	end 
 
 	end
 
