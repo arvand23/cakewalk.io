@@ -54,7 +54,7 @@ class TestsController < ApplicationController
 	def decrementbalance
 
 		@currenttest = Test.find_by_cwurl(params[:id])
-  		@currenttest.user.balance == 999 #@test.user.balance - 1
+  		@currenttest.user.balance = 999 #@test.user.balance - 1
   		@currenttest.user.save
 
   		respond_to do |format|
