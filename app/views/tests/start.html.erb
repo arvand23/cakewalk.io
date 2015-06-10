@@ -57,18 +57,18 @@
 						element.className = "btn redplanbutton";
 						link.innerHTML = " "
 						//update user balance
-					    $.ajax({
-					    	url: "<%= decrementbalance_tests_path %>",
-					        type: 'PUT',
-					    	dataType: 'json',
-					    	data: {id: <%= @test.id %>}
-						}).done(function( msg ) {
-							console.log('got it');
-						    $( "#log" ).html( msg );
-						}).fail(function( jqXHR, textStatus ) {
-							console.log('ops');
-						  	alert( "Request failed on end: " + textStatus );
-						});
+					    //$.ajax({
+					    //	url: "<%= decrementbalance_tests_path %>",
+					    //    type: 'PUT',
+					    //	dataType: 'json',
+					    //	data: {id: <%= @test.id %>}
+						//}).done(function( msg ) {
+						//	console.log('got it');
+						//    $( "#log" ).html( msg );
+						//}).fail(function( jqXHR, textStatus ) {
+						//	console.log('ops');
+						//  	alert( "Request failed on end: " + textStatus );
+						//});
 			      		//update complete_date
 					};
 					
