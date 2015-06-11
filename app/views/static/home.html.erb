@@ -12,7 +12,10 @@
 			</span>
 		</div>
 			<div class="account-balance">
-				</br>You have <%= pluralize(current_user.balance, 'cakewalk') %> left.   <%= link_to "Get More", upgrade_tests_path %></br></br>
+				</br>You have <%= pluralize(current_user.balance, 'cakewalk') %> left. 
+				<% if current_user.balance > 900 %>
+				(Buy Arvand lunch) <%= link_to "Get More", upgrade_tests_path %>
+				<% else %><%= link_to "Get More", upgrade_tests_path %><% end %></br></br>
 			</div>
 				<% if @url.errors.any? %>
 				   <ul class="alert alert-danger">
