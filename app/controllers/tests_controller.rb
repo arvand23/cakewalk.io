@@ -50,7 +50,7 @@ class TestsController < ApplicationController
         @currentuser.save
 
     	else
-    		render text: " Error"
+    		render text: "Error"
     	end 
 
 	end
