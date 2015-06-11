@@ -47,7 +47,7 @@ class TestsController < ApplicationController
 
 		@currentuser = @test.user
         @currentuser.balance = @currentuser.balance - 1
-        @currentuser.save
+        #@currentuser.save
 
     	else
     		render text: "Error"

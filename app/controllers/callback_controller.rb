@@ -18,6 +18,11 @@ class CallbackController < ApplicationController
 
       if event_type == 'RECORDING_COMPLETE'
         @screen_share_file = ScreenShareFile.create(url: params['callback']['recordingVideoUrl'], screen_share_event: @screen_share_event)
+      
+        @currentuser = @screen_share.test.user 
+        @currentuser.balance = @currentuser.balance - 1
+        @currentuser.save
+
       end
     end
 
