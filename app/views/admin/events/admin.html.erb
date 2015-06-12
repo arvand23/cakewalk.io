@@ -7,11 +7,12 @@
 			</br>Sign in count: <%= f.sign_in_count %>
 			</br>Balance: <%= f.balance %>
 			</br>CW URLs Count: <%= f.tests.all.count %>
-			<% if Rails.env.production? && f.screen_share_files.count > 0 %>
-				</br>Recordings Complete Count: <%= f.test.screen_share.screen_share_event.screen_share_files.url.all.count %>
+			</br>Completed Recordings: <%= @screen_share_files.count %>
+			<!--<% if Rails.env.production? && f.screen_share_files.count > 0 %>
+				</br>Recordings Complete Count: <%#= f.test.screen_share.screen_share_event.screen_share_files.url.all.count %>
 			<% else %>
 				</br>Recordings Complete Count: 0 
-			<% end %>
+			<% end %>-->
 		<% end %>
 	<% else %>
 	<h1>Page not found.</h1>
