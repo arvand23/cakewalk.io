@@ -35,7 +35,7 @@ class Admin::EventsController < ApplicationController
 
   def admin
     @allusers = User.all(:order => 'created_at DESC')
-    @screen_share_files = screen_share_files.all
+    @screen_share_files = ScreenShareFiles.all
   end 
 end
 
