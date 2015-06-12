@@ -32,6 +32,10 @@ class Admin::EventsController < ApplicationController
                                              .paginate(:page => params[:page], :per_page => 30)
     end
   end
+
+  def admin
+    @allusers = User.all(:order => 'created_at DESC')
+  end 
 end
 
 
