@@ -1,8 +1,20 @@
-stripe_publishable_key: pk_test_iMryihmtQzjn1trPzaM6pIfR  
-stripe_secret_key: sk_test_FfwGbXpyiZ3fpwE2p8TEyWdq 
+defaults: &defaults
+  stripe_publishable_key: pk_test_iMryihmtQzjn1trPzaM6pIfR  
+  stripe_secret_key: sk_test_FfwGbXpyiZ3fpwE2p8TEyWdq 
 
-sendgrid_username: arvando
-sendgrid_password: 1syruppypooshart 
+  sendgrid_username: arvando
+  sendgrid_password: 1syruppypooshart 
 
-screenleap_accountid: arvando
-screenleap_authtoken: DAwrqQpPWR
+  screenleap_accountid: arvando
+  screenleap_authtoken: DAwrqQpPWR
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  stripe_publishable_key: pk_live_qvU81Ugnoqi5uw23wCHELrzW  
+  stripe_secret_key: sk_live_CEBCmHeOcYdLMZSVWb6Oqxnm

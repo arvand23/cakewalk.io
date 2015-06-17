@@ -8,8 +8,8 @@ ActionMailer::Base.smtp_settings = {
   :address        => 'smtp.sendgrid.net',
   :port           => '587',
   :authentication => :plain,
-  :user_name      => ::APP_CONFIG['sendgrid_username'],
-  :password       => ::APP_CONFIG['sendgrid_password'],
+  :user_name      => APP_CONFIG[:sendgrid_username],
+  :password       => APP_CONFIG[:sendgrid_password],
   :domain         => 'https://protected-plateau-6103.herokuapp.com',
   :enable_starttls_auto => true
 }
@@ -17,7 +17,7 @@ ActionMailer::Base.smtp_settings = {
 uri = URI.parse('https://api.screenleap.com/v2/screen-shares') 
 req = Net::HTTP::Post.new(
   uri.path, initheader = {
-    'accountid' => ::APP_CONFIG['screenleap_accountid'],
-    'authtoken' => ::APP_CONFIG['screenleap_authtoken']
+    'accountid' => APP_CONFIG[:screenleap_accountid],
+    'authtoken' => APP_CONFIG[:screenleap_authtoken]
   }
 )

@@ -21,5 +21,3 @@ module Cakewalkio
     # config.i18n.default_locale = :de
   end
 end
-
-::APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")
