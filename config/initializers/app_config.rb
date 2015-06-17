@@ -25,4 +25,4 @@ end
 
 APP_CONFIG = symbolize_keys(YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env])
 
-#appconfig used to be in application.rb, but this way it loads it based on env
+#appconfig used to be in application.rb, but this way it loads it based on env.... everywhere where i use the keys, made them :fdslfkjdsf (into symbols)
