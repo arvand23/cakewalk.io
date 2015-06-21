@@ -88,7 +88,7 @@ class TestsController < ApplicationController
 
 		rescue Stripe::CardError => e
 		  flash[:error] = e.message
-		  redirect_to root_path, :notice => "Stripe err"
+		  redirect_to root_path, :notice => "You were not charged due to an error. Try again with a different card or contact pay@cakewalk.io."
 	end
 
 	def results
