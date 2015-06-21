@@ -9,7 +9,7 @@
 	color: #414247;
 	font-weight: bold;
 	font-size: 31px;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 }
 .pink {
 	font-family: 'Open Sans', sans-serif;
@@ -17,7 +17,14 @@
 	color: #d8505c;
 	font-weight: bold;
 	font-size: 32px;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
+	margin-bottom: -15px;
+}
+.beta {
+	font-family: 'Open Sans', sans-serif;
+	color: #d8505c;
+	font-size: 10px;
+	letter-spacing: 0px;
 	margin-bottom: -15px;
 }
 .logo {
@@ -86,6 +93,7 @@
 	color: #666666;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-right: 5px;
 }
 .btn-danger {
 	background-color: #d8505c;
@@ -234,4 +242,13 @@
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.help {
+	color: #414247;
+	text-align: center;
+	font-weight: 200;
+  	font-size: 14px;
+  	padding-top: 15px;
+  	padding-right: 2px;
 }

@@ -22,6 +22,11 @@ Cakewalkio::Application.routes.draw do
 
 put 'tests/decrementbalance' => 'tests#decrementbalance'
 
+#remove after private beta ends
+#devise_scope :user do
+#  get "/nom" => "devise/registrations#new"
+#end
+
   devise_for :users
   get "static/home"
   root 'static#home'

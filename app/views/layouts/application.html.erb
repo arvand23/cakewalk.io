@@ -18,13 +18,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-  <div class="navbar-brand"><span class="cakewalk"><%= image_tag("walkingcake.png", class: "logo") %>cakewalk</span><span class="pink">.io</span></div>
+  <div class="navbar-brand"><span class="cakewalk"><%= image_tag("walkingcake.png", class: "logo") %>cakewalk</span><span class="pink">.io</span><span class="beta">  beta</span></div>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
+        <li class="help">support@cakewalk.io</li>
         <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "sign in", new_user_session_path %></li>
@@ -45,7 +46,7 @@
 
 <!-- footer -->
 
-      <p class= "customfooter line">Made with <span class="glyphicon glyphicon-heart-empty"></span>, while listening to <span class="glyphicon glyphicon-music"></span> Childish Gambino  at &#169; Syrup Labs Inc, all rights reserved.</p>
+      <p class= "customfooter line">Made when listening to <span class="glyphicon glyphicon-music"></span> Childish Gambino  at &#169; Syrup Labs Inc, all rights reserved. hi@cakewalk.io </p>
 
 <% if Rails.env.production? %>
   <script>
