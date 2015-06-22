@@ -39,6 +39,7 @@
 	background-repeat: no-repeat;
 	background-size: cover; /*this makes it stretch it and be 100% width and height at all times */
 }
+/*d8505c*/
 .h1home {
 	color: #fff;
 	text-align: center;
@@ -66,9 +67,10 @@
     background: rgba(0, 0, 0, 0.3);
     border: 2px solid #78be47;
     color: #78be47;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 1px;
-    width: 225px;
+    width: 300px;
+    font-size: 17px;
     line-height: 50px;
     margin-bottom: 100px;
 }
@@ -251,4 +253,16 @@
   	font-size: 14px;
   	padding-top: 15px;
   	padding-right: 2px;
+}
+
+.homeicon {
+	padding-top: 130px;
+	margin-bottom: -80px;
+	width: 60px;
+}
+.iconposition {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
