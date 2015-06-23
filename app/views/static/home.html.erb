@@ -32,7 +32,10 @@
 			<div class="row">
 				<div class="col-md-9 text-left">
 					<h7><%= f.url %></h7> <!-- add a copy button -->
-					<h6 class="text">Cakewalk link: <% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %></h6></br></br></br></br>
+					<h6 class="text form-inline">
+						<input type="text" class="form-control" value='<% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %>'>    <span class="skinny glyphicon glyphicon-arrow-left"></span>  Share this with your testers
+							<!--Cakewalk link: <% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %>-->
+						</h6></br></br></br></br></br></br>
 				</div>
 				<div class="col-md-3">	
 					<%= link_to results_test_path(f), class: "btn btn-hollow-big" do %>
