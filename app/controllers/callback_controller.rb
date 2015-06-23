@@ -22,7 +22,10 @@ class CallbackController < ApplicationController
         @currentuser = @screen_share.test.user 
         @currentuser.balance = @currentuser.balance - 1
         @currentuser.save
-
+        #send email to user when recording complete.
+        #unless @screen_share.sendnotification = false
+          @current_test_url = @screen_share.test.url
+          NotificationMailer.recordingready(@currentuser, @current_test_url).deliver
       end
     end
 
