@@ -26,7 +26,6 @@
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
         <li class="help">support@cakewalk.io</li>
-        <li><%= link_to "edit profile", edit_user_registration_path %></li>
         <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "sign in", new_user_session_path %></li>
