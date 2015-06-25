@@ -44,7 +44,7 @@
 	color: #fff;
 	text-align: center;
 	font-weight: 100;
-  	font-size: 40px;
+  	font-size: 70px;
   	padding-top: 250px;
   	width: 80%;
 	margin-right: auto;
@@ -52,10 +52,10 @@
 	letter-spacing: 1px;
 }
 .h2home{
-	color: #d8505c;
+	color: #fff;
 	text-align: center;
-	font-weight: 200;
-  	font-size: 22px;
+	font-weight: 100;
+  	font-size: 27px;
   	margin-top: -5px;
   	padding-bottom: 130px;
   	width: 80%;
@@ -77,6 +77,19 @@
 .btn-hollow:hover, .btn-hollow.active {
 	color: #436806;
 	border-color: #436806;
+}
+.btn-new {
+    background: #d8505c;
+    color: #fff;
+    font-weight: 300;
+    width: 300px;
+    font-size: 17px;
+    line-height: 50px;
+    margin-bottom: 100px;
+    font-family: helvetica;
+}
+.btn-new:hover, .btn-new.active {
+	background: #FF5E6D;
 }
 .paragraphbody {
 	color: #666666;
