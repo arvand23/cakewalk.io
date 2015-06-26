@@ -316,6 +316,22 @@ span.glyphicon-arrow-left {
 	background: #FF5E6D;
 	color: white;
 }
+.btn-results-hollow {
+	background: #fff;
+	border: 2px solid #d8505c;
+    color: #d8505c;
+    font-weight: 100;
+    width: 90px;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 100px;
+    font-family: helvetica;
+}
+.btn-results-hollow:hover, .btn-results-hollow.active {
+	border: 2px solid #FF5E6D;
+	color: #FF5E6D;
+}
+
 
 
 @media (max-width: 500px) { 
