@@ -34,7 +34,7 @@
 }
 .notloggedinphoto {
 	margin-top: -75px;
-	background-image: asset-data-url("bling.png"); /* this syntax makes it work on heroku*/
+	background-image: asset-data-url("dogblur.jpg"); /* this syntax makes it work on heroku*/
 	background-position:center top;
 	background-repeat: no-repeat;
 	background-size: cover; /*this makes it stretch it and be 100% width and height at all times */
