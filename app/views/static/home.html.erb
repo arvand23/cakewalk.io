@@ -8,7 +8,7 @@
 		<div class="input-group">
 			<%= f.text_field :url, :placeholder => "URL you want to user test", class: "form-control input-lg" %>
 			<span class="input-group-btn">
-				<%= f.submit "pewpewpew", class: "btn btn-danger" %>
+				<%= f.submit "pewpewpew", class: "btn btn-danger" %><!-- MP Event -->
 			</span>
 		</div>
 			<div class="account-balance">
@@ -27,19 +27,20 @@
 	<% end %>
 </br></br></br></br></br></br></br></br></br>
 	<% @userurls.each do |f| %> <!-- %= would display array as well --> 
-		<div class="span7 text-center">
+		<div class="text-center">
 			<!--<div class="glyphicon glyphicon-flash pinkdot"></div>-->
 			<div class="row">
 				<div class="col-md-9 text-left">
 					<h7><%= f.url %></h7> <!-- add a copy button -->
 					<h6 class="text form-inline">
-						<input type="text" class="form-control" value='<% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "http://cakewalk.io/tests/#{f.cwurl}/start" %><% end %>'>    <span class="skinny glyphicon glyphicon-arrow-left"></span>  Share this with your testers
+						<input type="text" class="form-control" value='<% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "http://cakewalk.io/tests/#{f.cwurl}/start" %><% end %>'> <!-- MP Event -->
+							    <span class="skinny glyphicon glyphicon-arrow-left"></span>  Share this with your testers
 							<!--Cakewalk link: <% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "https://protected-plateau-6103.herokuapp.com/tests/#{f.cwurl}/start" %><% end %>-->
 						</h6></br></br></br></br></br></br>
 				</div>
 				<div class="col-md-3">	
-					<%= link_to results_test_path(f), class: "btn btn-hollow-big" do %>
-						<i class= "glyphicon glyphicon-film">  results</i>
+					<%= link_to results_test_path(f), class: "btn btn-results" do %>
+						<i class= "glyphicon glyphicon-film">  results</i> <!-- MP Event -->
 					<% end %>
 					<!--<%= link_to "#", class: "btn btn-hollow-small copy", id: "copy" do %> <!-- when u put this back, change col-md's to col-md-8, and col-md-4 
 						<i class= "glyphicon glyphicon-copy"> copy</i>

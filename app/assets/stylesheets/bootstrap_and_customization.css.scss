@@ -90,6 +90,7 @@
 }
 .btn-new:hover, .btn-new.active {
 	background: #FF5E6D;
+	color: white;
 }
 .paragraphbody {
 	color: #666666;
@@ -112,9 +113,13 @@
 }
 .btn-danger {
 	background-color: #d8505c;
-	font-weight: 200;
+	font-weight: 300;
 	letter-spacing: 1px;
 	height: 45px;
+	width: 200px;
+}
+.btn-danger:hover, .btn-danger.active {
+	background: #FF5E6D;
 }
 .btn-warning {
 	color: white;
@@ -162,6 +167,7 @@
 	text-align: left;
 	font-weight: 300;
 	font-size: 13px;
+	color: #666666;
 }
 .circle{
     -webkit-border-radius:8px;
@@ -292,6 +298,25 @@ span.glyphicon-arrow-left {
 .contact {
 	padding-left:0.3em
 }
+.text-center {
+	margin: auto; 
+	max-width: 500px;
+}
+.btn-results {
+    background: #d8505c;
+    color: #fff;
+    font-weight: 100;
+    width: 90px;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 100px;
+    font-family: helvetica;
+}
+.btn-results:hover, .btn-results.active {
+	background: #FF5E6D;
+	color: white;
+}
+
 
 @media (max-width: 500px) { 
 	.h1home{
@@ -299,5 +324,8 @@ span.glyphicon-arrow-left {
 	}
 	.h2home{
 		font-size: 19px;
+	}
+	.btn-danger {
+		width: 120px;
 	}
  }
