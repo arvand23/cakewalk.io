@@ -29,8 +29,8 @@
 	<% @userurls.each do |f| %> <!-- %= would display array as well --> 
 		<div class="text-center">
 			<!--<div class="glyphicon glyphicon-flash pinkdot"></div>-->
-			<div class="row">
-				<div class="col-md-9 text-left">
+			<div class="row text-left">
+				<div class="col-md-9">
 					<h7><%= f.url %></h7> <!-- add a copy button -->
 					<h6 class="text form-inline">
 						<input type="text" class="form-control" value='<% if Rails.env.development? %><%= "http://localhost:3000/tests/#{f.cwurl}/start" %><% else %><%= "http://cakewalk.io/tests/#{f.cwurl}/start" %><% end %>'> <!-- MP Event -->
@@ -66,13 +66,15 @@
 <% end %>
 <% unless signed_in? %>
 <div class="notloggedinphoto">
-	<div class="container">		
-		<h1 class="h1home">Bite-sized user testing</h1>
+	<div class="container">	
+		<h1 class="h1home">QA your usability, without traffic</h1>
+		<!--<h1 class="h1home">Bite-sized user testing</h1>-->
 			<!-- Bite-sized user testing so that you can build, measure, learn, way faster.
 			Bite-sized user testing so that you can
 			h1 make your product easy to use before you launch-->
-			<h2 class="h2home">Learn faster &#38; be leaner, before you launch</h2>
-			<p><div class="span7 text-center"><%= link_to "Get a Free User Test", new_user_registration_path, class: "btn btn-new" %></div></p>		
+			<!--<h2 class="h2home">Learn faster &#38; be leaner, before you launch</h2>-->
+			<h2 class="h2home">Shorten your feedback loops &#38; iterate before launching</h2>
+			<p><div class="span7 text-center"><%= link_to "Get a Free Trial", new_user_registration_path, class: "btn btn-new" %></div></p>		
 	</div>	
 </div>
 <div class="container">
